@@ -1,0 +1,12 @@
+<div id="modal-content-wrapper">
+    <section id="modal-body">
+        <webcam style="margin-left: 10px;" [height]="400" [width]="1000" [trigger]="triggerObservable" (imageCapture)="handleImage($event)">
+        </webcam>
+    </section>
+    <footer id="modal-footer">
+        <button mat-raised-button style="margin-right: 10px;" id="modal-cancel-button" (click)="triggerSnapshot();">
+            Click Here</button>
+        <button mat-raised-button id="modal-cancel-button" (click)="closeModal()">Go back</button>
+    </footer>
+</div>
+<!-- https://teamtreehouse.com/community/why-is-it-common-practice-to-wrap-everything-within-the-body-tag-with-a-div-tag -->
