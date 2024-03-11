@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
 import { FileUploadService } from '../../services/file-upload.service';
-import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
-
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({

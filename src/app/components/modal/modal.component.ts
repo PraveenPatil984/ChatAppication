@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { FileUploadService } from '../../services/file-upload.service';
-import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
-
+import { WebcamImage } from 'ngx-webcam';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -29,9 +28,6 @@ export class ModalComponent implements OnInit {
         this.fileList = fileList);
   }
 
- 
-  // If the user clicks the cancel button a.k.a. the go back button, then\
-  // just close the modal
   closeModal() {
     this.dialogRef.close();
   }
@@ -41,7 +37,6 @@ export class ModalComponent implements OnInit {
   }
 
   public handleImage(webcamImage: WebcamImage): void {
-    debugger
     this.webcamImage = webcamImage;
 
     this.sysImage = webcamImage!.imageAsDataUrl;

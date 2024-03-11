@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpEventType, HttpResponse } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
 import { FileUploadService } from '../../services/file-upload.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
@@ -85,7 +83,6 @@ export class UploadImagesComponent implements OnInit {
 
 
   selectFiles(event: any): void {
-    debugger
     if (event.target.files.length > 0) {
       this.selectedFiles = event.target.files;
       this.selectedFiles1 = this.fileList;

@@ -1,29 +1,16 @@
 <input type="file" style="display: none" id="fileInput" name="fileInput" accept="image/*" multiple
   (change)="selectFiles($event)" #fileInput />
 
-<mat-menu #menu="matMenu">
-  <button mat-menu-item (click)="openModal()">Camera</button>
-  <button mat-menu-item (click)="fileInput.click()"> Gallery</button>
-  <a target="_blank" href="https://www.whatsapp.com/" mat-menu-item>WhatsApp</a>
+<mat-menu #menu="matMenu" class="my-class">
+  <button mat-menu-item (click)="fileInput.click()"><mat-icon>image</mat-icon>Upload from gallery</button>
+  <button mat-menu-item (click)="openModal()"><mat-icon>camera_alt</mat-icon>Take a Photo</button>
+  <a target="_blank" href="https://www.whatsapp.com/" mat-menu-item><mat-icon> chat_bubble_outline</mat-icon>WhatsApp your photos <br> to us @ +9XXXX XXXXX</a>
 </mat-menu>
 
 <div  class="fixed-size-container">
   <div *ngFor='let preview of previews' class="fixed-size">
-   
-     <img [src]="preview.preview" style="width: 80%; height: 80%;">
-     <mat-icon style="color: black;" (click)="deleteImage(preview.lastModified)">clear</mat-icon>
+     <img [src]="preview.preview" style="width: 100%; height: 100%;">
+     <mat-icon style="color: #333; margin-top: -5px; margin-left: -20px;" (click)="deleteImage(preview.lastModified)">cancel</mat-icon>
   </div>
-
 </div>
-
-
-<!-- 
-<div>
-  <div *ngFor='let preview of previews' style="display:flex;">
-    <img [src]="preview.preview" class="row" class="column">
-    <i class="material-icons-outlined"><mat-icon (click)="deleteImage(preview.lastModified)">clear</mat-icon></i>
-  </div>
-</div> -->
-
-
-<button mat-flat-button color="primary" style="align-items: center;" [matMenuTriggerFor]="menu">Add Photo</button>
+<button mat-flat-button color="primary" [matMenuTriggerFor]="menu">Add Photo</button>
